@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var leftScore: UILabel!
     
+    var leftScorePoints = 0
+    var rightScorePoints = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -27,18 +30,28 @@ class ViewController: UIViewController {
 
     @IBAction func buttonPushed(_ sender: Any) {
         let leftRandomNumber = Int.random(in: 2...14)
-       // print(leftRandomNumber)
-        
+        leftCardImageView.image = UIImage(named: "card\(leftRandomNumber)")
         
         let rightRandomNumber = Int.random(in: 2...14)
-        //print(rightRandomNumber)
-        
-        
+        rightCardImageView.image = UIImage(named: "card\(rightRandomNumber)")
        
-        
+        if leftRandomNumber > rightRandomNumber{
+            //left side wins
+            leftScorePoints += 1
+            leftScore.text = String(leftScorePoints)
         }
+        else if leftRandomNumber<rightRandomNumber{
+            //right side wins
+            rightScorePoints += 1
+            rihgtScore.text = String(rightScorePoints)
+        }
+        else {
+            // tie
+            
+        }
+       
+    }
         
     
-
 }
 
