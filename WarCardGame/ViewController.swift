@@ -24,9 +24,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
 
     @IBAction func buttonPushed(_ sender: Any) {
         let leftRandomNumber = Int.random(in: 2...14)
@@ -34,24 +32,15 @@ class ViewController: UIViewController {
         
         let rightRandomNumber = Int.random(in: 2...14)
         rightCardImageView.image = UIImage(named: "card\(rightRandomNumber)")
-       
-        if leftRandomNumber > rightRandomNumber{
+        
+        if leftRandomNumber > rightRandomNumber {
             //left side wins
             leftScorePoints += 1
             leftScore.text = String(leftScorePoints)
-        }
-        else if leftRandomNumber<rightRandomNumber{
-            //right side wins
+        } else if leftRandomNumber<rightRandomNumber {
             rightScorePoints += 1
             rihgtScore.text = String(rightScorePoints)
-        }
-        else {
-            // tie
-            
-        }
-       
+        } else { }
     }
-        
-    
 }
 
